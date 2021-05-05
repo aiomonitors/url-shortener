@@ -34,7 +34,7 @@ export default async (
     const parsedBody = body.parse(req.body);
     const { id } = await prisma.shortened.create({
       data: {
-        id: base64url(Buffer.from(randomBytes(10))),
+        id: base64url(Buffer.from(randomBytes(5))),
         url: parsedBody.url,
       },
       select: {
