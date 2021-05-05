@@ -63,7 +63,8 @@ const Page: NextPage<InitialRedirectProps> = ({
     setTimeout(() => {
       window.location = url as Location;
     }, 500);
-    // eslint-disable-next-line react-hooks/exhaustive-deps k
+    // k
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -83,8 +84,8 @@ const Page: NextPage<InitialRedirectProps> = ({
           })
         ) : (
           <>
-            <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-            <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+            <link rel="shortcut icon" href="/link.ico" />
+            <link rel="icon" href="/link.ico" />
             <title>Short</title>
             <meta name="author" content="Shihab Chowdhury" />
             <meta
@@ -98,11 +99,11 @@ const Page: NextPage<InitialRedirectProps> = ({
             <meta name="theme-color" content="#ffffff" />
             <meta
               property="og:image"
-              content="https://og.scoutapp.ai/api/thumbnail?path=https:/short.shihab.dev"
+              content="https://short.shihab.dev/images/rainy.png"
             />
             <meta
               property="twitter:image"
-              content="https://og.scoutapp.ai/api/thumbnail?path=https:/short.shihab.dev"
+              content="https://short.shihab.dev/images/rainy.png"
             />
             <meta property="og:url" content="https://short.shihab.dev" />
             <meta property="twitter:card" content="summary_large_image" />
