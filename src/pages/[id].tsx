@@ -69,7 +69,7 @@ const Page: NextPage<InitialRedirectProps> = ({
   return (
     <>
       <Head>
-        {typeof metadata === "object" ? (
+        {metadata && typeof metadata === "object" ? (
           Object.keys(metadata).map((key) => {
             if (key === "title") {
               return <title>{metadata.title || metadata["og:title"]}</title>;
