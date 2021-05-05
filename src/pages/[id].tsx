@@ -42,7 +42,7 @@ const PageContainer = styled.div`
 
 export interface InitialRedirectProps {
   url: unknown;
-  metadata: MetatagsResponse;
+  metadata: MetatagsResponse | null;
 }
 
 const GlassMain = styled(Glass)`
@@ -134,22 +134,39 @@ export async function getStaticProps(
   const { url } = await prisma.shortened.findUnique({
     where: { id: context.params.id },
   });
-  let metadata: MetatagsResponse = null;
-  if (url) {
-    try {
-      const metadataResponse = await MetatagsFetcher(url);
-      if (metadataResponse) {
-        metadata = metadataResponse;
+  try {
+    let metadata: MetatagsResponse = null;
+    if (url) {
+      try {
+        const metadataResponse = await MetatagsFetcher(url);
+        if (metadataResponse) {
+          metadata = metadataResponse;
+        }
+        return {
+          props: {
+            url,
+            metadata,
+          },
+          revalidate: 300,
+        };
+      } catch (err) {
+        metadata = null;
       }
-    } catch (err) {
-      metadata = null;
     }
+  } catch (err) {
+    return {
+      props: {
+        url,
+        metadata: null,
+      },
+      revalidate: 300,
+    };
   }
 
   return {
     props: {
       url,
-      metadata,
+      metadata: null,
     },
     revalidate: 300,
   };
