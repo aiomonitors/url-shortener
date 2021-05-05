@@ -13,7 +13,7 @@ const Glass = styled.div`
 `;
 
 const ContentWrapper = styled(Glass)`
-  width: 300px;
+  width: 100%;
   height: min-content;
   margin-bottom: 5px;
   color: #3498db;

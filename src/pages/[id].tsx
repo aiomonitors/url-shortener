@@ -74,6 +74,10 @@ const Page: NextPage<InitialRedirectProps> = ({
             if (key === "title") {
               return <title>{metadata.title || metadata["og:title"]}</title>;
             }
+            if (key.startsWith("twitter")) {
+              // eslint-disable-next-line react/jsx-key
+              return <meta name={key} content={metadata[key]} />;
+            }
             // eslint-disable-next-line react/jsx-key
             return <meta property={key} content={metadata[key]} />;
           })
@@ -86,6 +90,11 @@ const Page: NextPage<InitialRedirectProps> = ({
             />
             <meta name="theme-color" content="#ffffff" />
             <meta property="og:url" content="https://short.shihab.dev" />
+            <meta
+              property="og:image"
+              content="https://short.shihab.dev/images/rainy.png"
+            />
+            <meta property="og:title" content="Short" />
             <meta name="twitter:card" content="summary_large_image" />
             <meta name="twitter:site" content="@aiomonitors" />
             <meta property="og:title" content="URL Shortner" />
