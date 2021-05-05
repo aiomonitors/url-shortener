@@ -42,7 +42,7 @@ const PageContainer = styled.div`
 
 export interface InitialRedirectProps {
   url: unknown;
-  metadata: MetatagsResponse;
+  metadata: MetatagsResponse | null;
 }
 
 const GlassMain = styled(Glass)`
@@ -63,13 +63,14 @@ const Page: NextPage<InitialRedirectProps> = ({
     setTimeout(() => {
       window.location = url as Location;
     }, 500);
+    // k
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <>
       <Head>
-        {typeof metadata === "object" ? (
+        {metadata && typeof metadata === "object" ? (
           Object.keys(metadata).map((key) => {
             if (key === "title") {
               return <title>{metadata.title || metadata["og:title"]}</title>;
@@ -83,8 +84,8 @@ const Page: NextPage<InitialRedirectProps> = ({
           })
         ) : (
           <>
-            <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-            <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+            <link rel="shortcut icon" href="/link.ico" />
+            <link rel="icon" href="/link.ico" />
             <title>Short</title>
             <meta name="author" content="Shihab Chowdhury" />
             <meta
@@ -98,11 +99,11 @@ const Page: NextPage<InitialRedirectProps> = ({
             <meta name="theme-color" content="#ffffff" />
             <meta
               property="og:image"
-              content="https://og.scoutapp.ai/api/thumbnail?path=https:/short.shihab.dev"
+              content="https://short.shihab.dev/images/rainy.png"
             />
             <meta
               property="twitter:image"
-              content="https://og.scoutapp.ai/api/thumbnail?path=https:/short.shihab.dev"
+              content="https://short.shihab.dev/images/rainy.png"
             />
             <meta property="og:url" content="https://short.shihab.dev" />
             <meta property="twitter:card" content="summary_large_image" />
@@ -134,22 +135,39 @@ export async function getStaticProps(
   const { url } = await prisma.shortened.findUnique({
     where: { id: context.params.id },
   });
-  let metadata: MetatagsResponse = null;
-  if (url) {
-    try {
-      const metadataResponse = await MetatagsFetcher(url);
-      if (metadataResponse) {
-        metadata = metadataResponse;
+  try {
+    let metadata: MetatagsResponse = null;
+    if (url) {
+      try {
+        const metadataResponse = await MetatagsFetcher(url);
+        if (metadataResponse) {
+          metadata = metadataResponse;
+        }
+        return {
+          props: {
+            url,
+            metadata,
+          },
+          revalidate: 300,
+        };
+      } catch (err) {
+        metadata = null;
       }
-    } catch (err) {
-      metadata = null;
     }
+  } catch (err) {
+    return {
+      props: {
+        url,
+        metadata: null,
+      },
+      revalidate: 300,
+    };
   }
 
   return {
     props: {
       url,
-      metadata,
+      metadata: null,
     },
     revalidate: 300,
   };
