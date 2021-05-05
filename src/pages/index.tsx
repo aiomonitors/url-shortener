@@ -98,7 +98,8 @@ const IndexPage = (): JSX.Element => {
       if (Object.keys(response).includes("error")) {
         toast.error((response as ErrorResponse)?.error);
       } else {
-        const fullURL = `https://short.shihab.dev/${
+        const { hostname } = window.location;
+        const fullURL = `https://${hostname}/${
           (response as SuccessResponse)?.id
         }`;
         setShortened(fullURL);
