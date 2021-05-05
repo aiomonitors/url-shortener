@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { MetatagsResponse } from "../types";
+import { MetatagsResponse } from "@/types";
 
 const Container = styled(motion.div)`
   background: rgba(255, 255, 255, 0.25);

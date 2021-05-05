@@ -1,5 +1,5 @@
 import axios from "axios";
-import { MetatagsResponse } from "../types";
+import { MetatagsResponse } from "@/types";
 
 const fetcher = async (url: string): Promise<MetatagsResponse> => {
   const response = await axios.get<MetatagsResponse>(

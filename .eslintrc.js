@@ -7,7 +7,7 @@ module.exports = {
   parserOptions: {
     sourceType: "module",
   },
-  plugins: ["@typescript-eslint", "react", "prettier"],
+  plugins: ["@typescript-eslint", "react", "prettier", "import"],
   extends: [
     "airbnb",
     "plugin:@typescript-eslint/recommended",
@@ -44,6 +44,9 @@ module.exports = {
   },
   settings: {
     "import/ignore": [".svg"],
+    "import/resolver": {
+      typescript: {},
+    },
   },
   overrides: [
     {

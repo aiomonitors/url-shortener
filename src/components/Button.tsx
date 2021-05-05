@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Lottie from "react-lottie";
-import loadingJSON from "../utils/loading.json";
+import loadingJSON from "@/utils/loading.json";
 
 const StyledButton = styled.button`
   border: 2px solid #283747;

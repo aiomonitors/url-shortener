@@ -1,5 +1,5 @@
 import axios from "axios";
-import { CreateResponse } from "../pages/api/create";
+import { CreateResponse } from "@/pages/api/create";
 
 const postShorten = async (url: string): Promise<CreateResponse> => {
   try {

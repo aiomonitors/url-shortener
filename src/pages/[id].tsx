@@ -8,8 +8,8 @@ import {
 import styled from "styled-components";
 import Head from "next/head";
 import { PrismaClient } from "@prisma/client";
-import { MetatagsResponse } from "../types";
-import MetatagsFetcher from "../utils/metatags-fetcher";
+import { MetatagsResponse } from "@/types";
+import MetatagsFetcher from "@/utils/metatags-fetcher";
 
 const prisma = new PrismaClient();
 

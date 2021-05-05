@@ -5,13 +5,13 @@ import { motion } from "framer-motion";
 import toast from "react-hot-toast";
 import * as z from "zod";
 import Head from "next/head";
-import MetadataComponent from "../components/MetadataComponent";
-import fetcher from "../utils/swr-fetcher";
-import Input from "../components/Input";
-import Button from "../components/Button";
-import postShorten from "../utils/postShorten";
-import { SuccessResponse, ErrorResponse } from "./api/create";
-import Shortened from "../components/Shortened";
+import postShorten from "@/utils/postShorten";
+import MetadataComponent from "@/components/MetadataComponent";
+import fetcher from "@/utils/swr-fetcher";
+import Input from "@/components/Input";
+import Button from "@/components/Button";
+import { SuccessResponse, ErrorResponse } from "@/pages/api/create";
+import Shortened from "@/components/Shortened";
 
 const Page = styled.div`
   background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
