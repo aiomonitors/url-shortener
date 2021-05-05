@@ -1,0 +1,47 @@
+{
+  "name": "url-shortner",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "next dev",
+    "start": "next",
+    "build": "next build"
+  },
+  "devDependencies": {
+    "@types/node": "^15.0.1",
+    "@typescript-eslint/eslint-plugin": "^4.22.1",
+    "@typescript-eslint/parser": "^4.22.1",
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb": "18.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-better-styled-components": "^1.1.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "prettier": "^2.2.1",
+    "prisma": "2.22.0",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.4"
+  },
+  "dependencies": {
+    "@prisma/client": "2.22.0",
+    "@types/react": "^17.0.4",
+    "@types/react-lottie": "^1.2.5",
+    "axios": "^0.21.1",
+    "base64url": "^3.0.1",
+    "framer-motion": "^4.1.11",
+    "next": "^10.2.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-hot-toast": "^1.0.2",
+    "react-lottie": "^1.2.3",
+    "styled-components": "^5.2.3",
+    "swr": "^0.5.6",
+    "tippy.js": "^6.3.1",
+    "unfetch": "^4.2.0",
+    "zod": "^1.11.17"
+  }
+}
