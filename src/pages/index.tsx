@@ -82,7 +82,14 @@ const IndexPage = (): JSX.Element => {
   return (
     <Page>
       <Head>
-        <title>URL Shortner</title>
+        <link rel="shortcut icon" href="/link.ico" />
+        <link rel="icon" href="/link.ico" />
+        <title>Short</title>
+        <meta name="author" content="Shihab Chowdhury" />
+        <meta
+          name="description"
+          content="Beautifully shorten URLs that are just hideously long"
+        />
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
@@ -92,10 +99,19 @@ const IndexPage = (): JSX.Element => {
           property="og:image"
           content="https://og.scoutapp.ai/api/thumbnail?path=https:/short.shihab.dev"
         />
+        <meta
+          property="twitter:image"
+          content="https://og.scoutapp.ai/api/thumbnail?path=https:/short.shihab.dev"
+        />
         <meta property="og:url" content="https://short.shihab.dev" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@aiomonitors" />
-        <meta property="og:title" content="URL Shortner" />
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:site" content="https://short.shihab.dev" />
+        <meta name="twitter:creator" content="@aiomonitors" />
+        <meta
+          property="twitter:description"
+          content="Beautifully shorten URLs that are just hideously long"
+        />
+        <meta property="og:title" content="Short" />
         <meta
           property="og:description"
           content="Beautifully shorten URLs that are just hideously long"

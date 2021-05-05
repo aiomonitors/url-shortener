@@ -83,21 +83,36 @@ const Page: NextPage<InitialRedirectProps> = ({
           })
         ) : (
           <>
-            <title>URL Shortner</title>
+            <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+            <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+            <title>Short</title>
+            <meta name="author" content="Shihab Chowdhury" />
+            <meta
+              name="description"
+              content="Beautifully shorten URLs that are just hideously long"
+            />
             <meta
               name="viewport"
               content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
             />
             <meta name="theme-color" content="#ffffff" />
-            <meta property="og:url" content="https://short.shihab.dev" />
             <meta
               property="og:image"
-              content="https://short.shihab.dev/images/rainy.png"
+              content="https://og.scoutapp.ai/api/thumbnail?path=https:/short.shihab.dev"
+            />
+            <meta
+              property="twitter:image"
+              content="https://og.scoutapp.ai/api/thumbnail?path=https:/short.shihab.dev"
+            />
+            <meta property="og:url" content="https://short.shihab.dev" />
+            <meta property="twitter:card" content="summary_large_image" />
+            <meta property="twitter:site" content="https://short.shihab.dev" />
+            <meta name="twitter:creator" content="@aiomonitors" />
+            <meta
+              property="twitter:description"
+              content="Beautifully shorten URLs that are just hideously long"
             />
             <meta property="og:title" content="Short" />
-            <meta name="twitter:card" content="summary_large_image" />
-            <meta name="twitter:site" content="@aiomonitors" />
-            <meta property="og:title" content="URL Shortner" />
             <meta
               property="og:description"
               content="Beautifully shorten URLs that are just hideously long"
