@@ -6,7 +6,7 @@ import toast from "react-hot-toast";
 import * as z from "zod";
 import Head from "next/head";
 import MetadataComponent from "../components/MetadataComponent";
-import fetcher from "../utils/metatags-fetcher";
+import fetcher from "../utils/swr-fetcher";
 import Input from "../components/Input";
 import Button from "../components/Button";
 import postShorten from "../utils/postShorten";
@@ -20,15 +20,23 @@ const Page = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media only screen and (max-width: 448px) {
+    height: -webkit-fill-available !important;
+  }
 `;
 
 const PageContainer = styled(motion.div)`
   height: min-content;
   width: 300px;
+
+  @media screen and (max-width: 300px) {
+    width: 95%;
+  }
 `;
 
 const IndexPage = (): JSX.Element => {
-  const [url, setURL] = useState("https://scoutapp.ai");
+  const [url, setURL] = useState("");
   const { data } = useSWR(`/api/metadata?url=${url}`, fetcher);
   const [shortened, setShortened] = useState("");
   const [loading, setLoading] = useState(false);
@@ -71,8 +79,6 @@ const IndexPage = (): JSX.Element => {
     }
   };
 
-  const ogImage =
-    "https://og.scoutapp.ai/api/thumbnail?path=https://shihab.dev";
   return (
     <Page>
       <Head>
@@ -82,7 +88,10 @@ const IndexPage = (): JSX.Element => {
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
         />
         <meta name="theme-color" content="#ffffff" />
-        <meta property="og:image" content={ogImage} />
+        <meta
+          property="og:image"
+          content="https://og.scoutapp.ai/api/thumbnail?path=https:/short.shihab.dev"
+        />
         <meta property="og:url" content="https://short.shihab.dev" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@aiomonitors" />
