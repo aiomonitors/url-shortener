@@ -79,9 +79,10 @@ const IndexPage = (): JSX.Element => {
   }, [data]);
 
   useEffect(() => {
-    if (url.length === 0) {
+    if (shortened.length !== 0) {
       setShortened("");
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [url]);
   useEffect(() => {
     setLoading(false);
