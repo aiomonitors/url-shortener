@@ -63,7 +63,7 @@ const Page: NextPage<InitialRedirectProps> = ({
     setTimeout(() => {
       window.location = url as Location;
     }, 500);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps k
   }, []);
 
   return (
