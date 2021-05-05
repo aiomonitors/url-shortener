@@ -97,11 +97,11 @@ const IndexPage = (): JSX.Element => {
         <meta name="theme-color" content="#ffffff" />
         <meta
           property="og:image"
-          content="https://og.scoutapp.ai/api/thumbnail?path=https:/short.shihab.dev"
+          content="https://og.scoutapp.ai/api/thumbnail?path=https:/short.shihab.dev/"
         />
         <meta
           property="twitter:image"
-          content="https://og.scoutapp.ai/api/thumbnail?path=https:/short.shihab.dev"
+          content="https://og.scoutapp.ai/api/thumbnail?path=https:/short.shihab.dev/"
         />
         <meta property="og:url" content="https://short.shihab.dev" />
         <meta property="twitter:card" content="summary_large_image" />
