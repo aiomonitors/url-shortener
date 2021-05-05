@@ -35,6 +35,38 @@ const PageContainer = styled(motion.div)`
   }
 `;
 
+const Glass = styled.div`
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+`;
+
+const GithubContainer = styled(Glass)`
+  width: 70px;
+  height: 40px;
+  position: fixed;
+  bottom: 10px;
+  color: #283747;
+  transition: color 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    color: #3498db;
+  }
+`;
+
+const GithubURL = styled.a`
+  text-decoration: none;
+  color: inherit;
+  font-size: 14px;
+  font-weight: 500;
+`;
+
 const IndexPage = (): JSX.Element => {
   const [url, setURL] = useState("");
   const { data } = useSWR(`/api/metadata?url=${url}`, fetcher);
@@ -131,6 +163,11 @@ const IndexPage = (): JSX.Element => {
         {shortened && <Shortened>{shortened}</Shortened>}
         {!!url && <MetadataComponent data={data} />}
       </PageContainer>
+      <GithubContainer>
+        <GithubURL href="https://github.com/aiomonitors/url-shortener">
+          Github
+        </GithubURL>
+      </GithubContainer>
     </Page>
   );
 };
