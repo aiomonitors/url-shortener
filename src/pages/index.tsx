@@ -152,7 +152,7 @@ const IndexPage = (): JSX.Element => {
         />
         <meta
           httpEquiv="Content-Security-Policy"
-          content="default-src 'self' style-src 'self' 'unsafe-inline' vitals.vercel-insights.com; img-src https://*; child-src 'none';"
+          content="default-src 'self' style-src 'self' 'unsafe-inline' vitals.vercel-insights.com; img-src https://*;"
         />
       </Head>
       <PageContainer layout transition={{ layoutY: { duration: "0.1" } }}>
