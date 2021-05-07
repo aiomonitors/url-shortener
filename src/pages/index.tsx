@@ -150,6 +150,10 @@ const IndexPage = (): JSX.Element => {
           property="og:description"
           content="Beautifully shorten URLs that are just hideously long"
         />
+        <meta
+          httpEquiv="Content-Security-Policy"
+          content="default-src 'self' vitals.vercel-insights.com; img-src https://*; child-src 'none';"
+        />
       </Head>
       <PageContainer layout transition={{ layoutY: { duration: "0.1" } }}>
         <Input
