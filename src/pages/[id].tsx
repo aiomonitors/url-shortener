@@ -86,7 +86,7 @@ const Page: NextPage<InitialRedirectProps> = ({
           <>
             <meta
               httpEquiv="Content-Security-Policy"
-              content="default-src 'self' vitals.vercel-insights.com; img-src https://*; child-src 'none';"
+              content="default-src 'self' style-src 'self' 'unsafe-inline' vitals.vercel-insights.com; img-src https://*; child-src 'none';"
             />
             <link rel="shortcut icon" href="/link.ico" />
             <link rel="icon" href="/link.ico" />
